@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Feliz 22, Leonardo — do Thales 🎉</title>
+<meta name="theme-color" content="#0f0f1f" />
+<style>
+  :root{
+    --bg:#0b0b1a; --ink:#f5f6ff; --muted:#bfc1e6; --stroke:rgba(255,255,255,.12);
+    --glass: blur(10px) saturate(120%);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:
+    radial-gradient(1000px 700px at 15% 10%, #14143a, #0b0b1a 60%) fixed;
+    color:var(--ink); font-family: system-ui, -apple-system, Inter, "Segoe UI", Roboto, Arial}
+  header{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden}
+  .wrap{position:relative;z-index:2;text-align:center;padding:6rem 1.2rem 4rem;max-width:1100px;margin:auto}
+  .chip{display:inline-flex;gap:.5rem;align-items:center;padding:.55rem 1rem;border:1px solid var(--stroke);
+    border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.05));backdrop-filter:var(--glass);
+    color:#cfd0ff;font-weight:800;letter-spacing:.2px}
+  .title{font-size:clamp(2.2rem,8vw,6rem);line-height:1.02;margin:.9rem 0 .2rem;font-weight:1000;letter-spacing:-.02em}
+  .g{background:conic-gradient(from 120deg,#7c5cff,#5ce1ff,#ff6ec7,#ffd36e,#7c5cff);
+     background-size:220% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:g 7s linear infinite}
+  @keyframes g{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .subtitle{color:#cfd0ff;font-size:clamp(1rem,2.6vw,1.35rem);max-width:70ch;margin:0 auto 1.4rem}
+  .badge22{
+    display:inline-grid;place-items:center;width:min(70vw,420px);aspect-ratio:1/1;
+    margin:1.2rem auto 0;border-radius:28px;padding:1.2rem;
+    background:
+      radial-gradient(60% 60% at 30% 25%, #ffffff10 0 40%, #0000 45%),
+      linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+    border:1px solid var(--stroke); box-shadow:0 40px 100px rgba(0,0,0,.45); backdrop-filter:var(--glass)
+  }
+  .num{font-size:clamp(4rem,22vw,12rem);font-weight:1000;line-height:1;letter-spacing:-.04em;
+    background:linear-gradient(180deg,#ffffff,#d9d9ff); -webkit-background-clip:text; color:transparent;
+    filter: drop-shadow(0 20px 60px rgba(124,92,255,.35))}
+  .ribbon{margin-top:.5rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#fff;
+    background:linear-gradient(90deg, #7c5cff, #5ce1ff, #ff6ec7, #ffd36e, #7c5cff);
+    background-size:300% 100%;animation:rb 10s linear infinite;display:inline-block;padding:.45rem .9rem;border-radius:999px}
+  @keyframes rb{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+  .card{max-width:900px;margin:2rem auto 0;padding:1.2rem 1.2rem 1.1rem;border-radius:18px;
+    background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.05)); border:1px solid var(--stroke); backdrop-filter:var(--glass)}
+  .msg{font-size:clamp(1.05rem,2.4vw,1.25rem);margin:0;color:#f1f1ff}
+  .assinatura{margin:.9rem 0 0;color:#e5e6ff;font-weight:700}
+  .cta{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+  .btn{--ring:rgba(124,92,255,.45);border:none;padding:.9rem 1rem;border-radius:14px;background:linear-gradient(180deg,#211a49,#171336);
+    color:#fff;font-weight:900;letter-spacing:.3px;cursor:pointer;transition:transform .08s ease, box-shadow .2s ease; box-shadow:0 10px 24px rgba(0,0,0,.35),0 0 0 0 var(--ring)}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 16px 36px rgba(0,0,0,.45),0 0 0 10px var(--ring)}
+  .hint{margin-top:.5rem;color:#d5d6ff;opacity:.85;font-size:.92rem}
+  footer{padding:2.2rem 1rem;text-align:center;color:#cfd0ff}
+  /* balões + canvas */
+  .baloon{position:absolute;bottom:-12vh;width:46px;height:60px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+    box-shadow:0 12px 40px rgba(0,0,0,.3);animation:floatUp 18s linear infinite;opacity:.8}
+  .baloon:after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-22px;width:2px;height:22px;background:#ffffff55}
+  .b1{left:5%;background:linear-gradient(180deg,#ffd36e,#ff7a7a)}
+  .b2{left:18%;animation-duration:20s;background:linear-gradient(180deg,#7c5cff,#5ce1ff)}
+  .b3{left:62%;animation-duration:14s;background:linear-gradient(180deg,#ff6ec7,#ffd36e)}
+  .b4{left:84%;animation-duration:22s;background:linear-gradient(180deg,#a4ff7c,#5ce1ff)}
+  @keyframes floatUp{0%{transform:translateY(20vh)}50%{transform:translateY(-40vh) translateX(10px) rotate(6deg)}100%{transform:translateY(-120vh) translateX(-10px) rotate(-6deg)}}
+  .stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+</style>
+</head>
+<body>
+  <canvas class="stars" id="sky" aria-hidden="true"></canvas>
+
+  <header role="banner">
+    <div class="baloon b1"></div><div class="baloon b2"></div><div class="baloon b3"></div><div class="baloon b4"></div>
+
+    <div class="wrap">
+      <div class="chip">🎂 Celebrando <strong>Leonardo</strong> — com carinho do <strong>Thales</strong></div>
+      <h1 class="title">Feliz <span class="g">22</span>, Leonardo! 🎉</h1>
+      <p class="subtitle">Que seu novo ciclo venha com saúde, risadas e vitórias. Obrigado por existir e por ser esse amigo gigante. — Thales</p>
+
+      <div class="badge22">
+        <div class="num">22</div>
+        <div class="ribbon">hoje é o seu dia ✦ parabéns ✦ felicidade ✦ amor ✦ luz ✦</div>
+      </div>
+
+      <div class="card">
+        <p class="msg">Leo, se a vida é palco, você é a cena favorita. Que a sorte te encontre, que a coragem te leve, e que a alegria fique — todos os dias.</p>
+        <p class="assinatura">Com carinho, Thales 💜</p>
+      </div>
+
+      <div class="cta">
+        <button class="btn" id="confettiBtn">Soltar confete 🎊</button>
+        <button class="btn" id="fireBtn">Mais fogos ✨</button>
+        <a class="btn" href="./carta.html" rel="next">Ir para a carta ➜</a>
+      </div>
+      <div class="hint">O show começa sozinho. Se quiser, clique nos botões para repetir a festa.</div>
+    </div>
+  </header>
+
+  <footer>© Thales → Leonardo. 💫</footer>
+
+<script>
+/* ========= fogos/confete minimal ========= */
+(function(){
+  const canvas = document.getElementById('sky'), ctx = canvas.getContext('2d');
+  let W=0,H=0,dpr=Math.max(1,devicePixelRatio||1);
+  const rockets=[], sparks=[], stars=[];
+  const rand=(a,b)=>a+Math.random()*(b-a);
+  function resize(){
+    W = canvas.clientWidth = innerWidth;
+    H = canvas.clientHeight = innerHeight;
+    canvas.width = W*dpr; canvas.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    stars.length=0; const n = Math.min(160, Math.floor(W*H/18000));
+    for(let i=0;i<n;i++){ stars.push({x:Math.random()*W, y:Math.random()*H, s:Math.random()*1.4+0.2, p:Math.random()*Math.PI*2}); }
+  }
+  addEventListener('resize', resize); resize();
+
+  function Rocket(x,y,vx,vy,color){ this.x=x;this.y=y;this.vx=vx;this.vy=vy;this.color=color; }
+  function Spark(x,y,vx,vy,color,ttl){ this.x=x;this.y=y;this.vx=vx;this.vy=vy;this.color=color;this.life=ttl;this.max=ttl; }
+
+  function spawnRocket(x){
+    x ??= rand(W*0.15, W*0.85);
+    const y = H+8, vx = rand(-1,1), vy = -rand(10,14);
+    const hue = (Math.random()*360|0);
+    rockets.push(new Rocket(x,y,vx,vy,`hsl(${hue} 100% 65%)`));
+  }
+  function explode(x,y,color){
+    const n = 120 + (Math.random()*80|0);
+    for(let i=0;i<n;i++){
+      const a=i/n*Math.PI*2 + Math.random()*0.12, s=rand(2,8);
+      sparks.push(new Spark(x,y,Math.cos(a)*s,Math.sin(a)*s,color, 80 + (Math.random()*50|0)));
+    }
+  }
+  function confettiBurst(cx,cy,count=160){
+    const colors=["#7c5cff","#5ce1ff","#ff6ec7","#ffd36e","#a4ff7c","#ffffff"];
+    for(let i=0;i<count;i++){
+      const a = Math.PI*1.5 + rand(-Math.PI/2, Math.PI/2);
+      const s = rand(4,12);
+      sparks.push(new Spark(cx,cy,Math.cos(a)*s,Math.sin(a)*s, colors[(Math.random()*colors.length)|0], 90 + (Math.random()*30|0)));
+    }
+  }
+  function step(){
+    ctx.clearRect(0,0,W,H);
+    for(const st of stars){ st.p += 0.02; const tw=(Math.sin(st.p)*0.4 + 0.6);
+      ctx.globalAlpha=tw; ctx.fillStyle="#fff"; ctx.fillRect(st.x,st.y,st.s,st.s); }
+    ctx.globalAlpha=1;
+    for(let i=rockets.length-1;i>=0;i--){
+      const r=rockets[i]; r.vy += 0.12; r.x += r.vx; r.y += r.vy;
+      ctx.fillStyle=r.color; ctx.beginPath(); ctx.arc(r.x,r.y,2.6,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle=r.color; ctx.globalAlpha=.6; ctx.beginPath(); ctx.moveTo(r.x,r.y); ctx.lineTo(r.x-r.vx*3, r.y-r.vy*3); ctx.stroke(); ctx.globalAlpha=1;
+      if(r.vy>=-1.5 || r.y<H*0.25){ explode(r.x,r.y,r.color); rockets.splice(i,1); }
+    }
+    for(let i=sparks.length-1;i>=0;i--){
+      const s=sparks[i]; s.vy+=0.08; s.x+=s.vx; s.y+=s.vy; s.life--;
+      const a=Math.max(0,s.life/s.max); ctx.globalAlpha=a; ctx.fillStyle=s.color; ctx.fillRect(s.x,s.y,2,2);
+      if(s.life<=0) sparks.splice(i,1);
+    }
+    ctx.globalAlpha=1;
+    requestAnimationFrame(step);
+  }
+  step();
+
+  setTimeout(()=>{ for(let i=0;i<4;i++) setTimeout(()=>spawnRocket(), i*260); }, 400);
+  setTimeout(()=>{ confettiBurst(W/2, H*0.28); }, 1000);
+
+  document.getElementById('fireBtn').addEventListener('click', ()=>{ for(let i=0;i<4;i++) setTimeout(()=>spawnRocket(), i*260); });
+  document.getElementById('confettiBtn').addEventListener('click', (e)=>{
+    const r=e.currentTarget.getBoundingClientRect();
+    confettiBurst(r.left+r.width/2, r.top+scrollY);
+  });
+})();
+</script>
+</body>
+</html>
